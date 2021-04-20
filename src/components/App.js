@@ -10,9 +10,12 @@ class App extends React.Component {
     const client_id = process.env.REACT_APP_PICS_API_KEY;
     console.log(client_id);
 
-    /*axios.get(url, {
-
-    });*/
+    axios.get(url, {
+      params: {query: term },
+      headers: {
+        Authorization: `Client-ID ${client_id}`
+      }
+    });
   }
 
   render() {
